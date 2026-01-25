@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Google Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background: #4285f4;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #3367d6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Google Form Submission</h1>
+    
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdTnqwXt8hJ2opqbqXxvs2RXtYEpr2tKw6m5I7OqkZ6QoSMbQ/formResponse" method="POST" target="_blank">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="entry.1421743528" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="entry.694421261" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="entry.577368385" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="entry.278806586" rows="5" required></textarea>
+        </div>
+        
+        <button type="submit">Send Message</button>
+    </form>
+    
+    <hr style="margin: 40px 0;">
+    
+    <h2>Alternative: Direct Google Form</h2>
+    <p>If the form above doesn't work, click here to open the Google Form directly:</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdTnqwXt8hJ2opqbqXxvs2RXtYEpr2tKw6m5I7OqkZ6QoSMbQ/viewform" target="_blank" style="color: #4285f4; text-decoration: none; font-weight: bold;">Open Google Form</a>
+</body>
+</html>

@@ -31,35 +31,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Contact form handling with Stranger Things theme
-    const contactForm = document.getElementById('contactForm');
+    // Simple success message function for Google Forms
+    let submitted = false;
+    
+    window.showSuccessMessage = function() {
+        if (submitted) {
+            // Show success message
+            showSuccessAlert('MESSAGE SENT SUCCESSFULLY');
+            
+            // Reset form after a short delay
+            setTimeout(() => {
+                const form = document.querySelector('form[action*="formResponse"]');
+                if (form) {
+                    form.reset();
+                }
+                submitted = false;
+            }, 1000);
+        }
+    }
+    
+    // Set submitted flag when form is submitted
+    const contactForm = document.querySelector('form[action*="formResponse"]');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            
-            // Basic validation
-            if (!name || !email || !subject || !message) {
-                showStrangerAlert('Please fill in all fields to escape the Upside Down!');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                showStrangerAlert('Please enter a valid email address from this dimension!');
-                return;
-            }
-            
-            // Simulate form submission with Stranger Things theme
-            showStrangerAlert('Message sent to the other side! I will contact you soon from the real world.');
-            this.reset();
+        contactForm.addEventListener('submit', function() {
+            submitted = true;
         });
     }
     
@@ -283,6 +278,55 @@ function showStrangerAlert(message) {
             alert.remove();
         }
     }, 5000);
+}
+
+// Success alert function
+function showSuccessAlert(message) {
+    // Create the alert element
+    const alert = document.createElement('div');
+    alert.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(0, 26, 0, 0.95));
+        color: #00ff00;
+        padding: 2rem;
+        border-radius: 15px;
+        border: 2px solid #00ff00;
+        box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
+        z-index: 10000;
+        font-family: Orbitron, monospace;
+        text-align: center;
+        max-width: 400px;
+        animation: alertGlow 0.5s ease-in-out;
+    `;
+    
+    alert.innerHTML = `
+        <div style="font-size: 1.3rem; margin-bottom: 1rem; text-shadow: 0 0 10px #00ff00; font-weight: bold;">${message}</div>
+        <button onclick="this.parentElement.remove()" style="
+            background: linear-gradient(45deg, #00ff00, #00cc00);
+            color: #000000;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            font-family: Orbitron, monospace;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+        ">OK</button>
+    `;
+    
+    document.body.appendChild(alert);
+    
+    // Auto remove after 4 seconds
+    setTimeout(() => {
+        if (alert && alert.parentElement) {
+            alert.remove();
+        }
+    }, 4000);
 }
 
 // Add CSS for new animations

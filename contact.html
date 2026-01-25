@@ -27,7 +27,7 @@
                     <a href="education.html" class="nav-link">Education</a>
                 </li>
                 <li class="nav-item">
-                    <a href="experience.html" class="nav-link">Experience</a>
+                    <a href="experience.html" class="nav-link">Internships</a>
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link active">Contact</a>
@@ -79,13 +79,13 @@
                     <div class="social-links">
                         <h3>Connect With Me</h3>
                         <div class="social-icons">
-                            <a href="https://linkedin.com/in/your-username" target="_blank" class="social-icon linkedin">
+                            <a href="https://linkedin.com/in/shwetha-susan-gijo" target="_blank" class="social-icon linkedin">
                                 <i class="fab fa-linkedin"></i>
                             </a>
-                            <a href="https://github.com/your-username" target="_blank" class="social-icon github">
+                            <a href="https://github.com/shwetha00" target="_blank" class="social-icon github">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="https://instagram.com/your-username" target="_blank" class="social-icon instagram">
+                            <a href="https://instagram.com/shwetha.susan" target="_blank" class="social-icon instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
                             <a href="https://twitter.com/your-username" target="_blank" class="social-icon twitter">
@@ -97,25 +97,27 @@
                 
                 <div class="contact-form">
                     <h2>Send Me a Message</h2>
-                    <form id="contactForm">
+                    
+                    <!-- Direct Google Forms submission -->
+                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdTnqwXt8hJ2opqbqXxvs2RXtYEpr2tKw6m5I7OqkZ6QoSMbQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="entry.1421743528" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="entry.694421261" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <input type="text" id="subject" name="entry.577368385" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
+                            <textarea id="message" name="entry.278806586" rows="6" required></textarea>
                         </div>
                         
                         <button type="submit" class="submit-btn">
@@ -123,6 +125,9 @@
                             Send Message
                         </button>
                     </form>
+                    
+                    <!-- Hidden iframe for form submission -->
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {showSuccessMessage();}"></iframe>
                 </div>
             </div>
         </div>
