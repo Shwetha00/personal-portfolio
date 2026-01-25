@@ -1960,6 +1960,7 @@ body {
         justify-content: center;
         width: 100%;
         margin-bottom: 1rem;
+        margin-top: 2rem;
     }
     
     .profile-image {
@@ -2507,7 +2508,11 @@ body {
     }
     
     .home-container {
-        padding: 100px 0.5rem 1rem;
+        padding: 120px 0.5rem 1rem;
+    }
+    
+    .profile-section {
+        margin-top: 1.5rem;
     }
     
     .profile-image {
@@ -2594,6 +2599,10 @@ body {
 
 /* Force mobile layout for very small screens */
 @media (max-width: 375px) {
+    .profile-section {
+        margin-top: 1rem;
+    }
+    
     .profile-image {
         width: 140px !important;
         height: 140px !important;
