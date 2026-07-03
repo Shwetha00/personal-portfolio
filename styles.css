@@ -678,8 +678,35 @@ body {
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
     .home-content { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
-    .profile-section::before { width: 260px; height: 260px; }
-    .profile-image { width: 220px; height: 220px; margin: 0 auto; }
+
+    .profile-section {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-section::before {
+        width: 240px; height: 240px;
+        position: absolute;
+        z-index: 0;
+    }
+
+    .profile-image {
+        width: 200px; height: 200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        flex-shrink: 0;
+    }
+
+    .profile-image img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
     .social-buttons { justify-content: center; }
     .resume-section { text-align: center; }
     .tag-line { margin: 0 auto 1.25rem; }
@@ -691,7 +718,8 @@ body {
 @media (max-width: 768px) {
     .nav-container { flex-direction: column; height: auto; padding: 0.75rem 1rem; gap: 0.5rem; }
     .nav-menu { flex-wrap: wrap; justify-content: center; }
-    .main-heading { font-size: 2.2rem; }
+    .home-container { padding: 100px 1.25rem 2rem; }
+    .main-heading { font-size: 2rem; }
     .page-content { padding: 1.75rem 1.25rem; }
     .page-title { font-size: 2rem; }
     .contact-container { grid-template-columns: 1fr; gap: 2rem; }
