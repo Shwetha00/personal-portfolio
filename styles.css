@@ -519,11 +519,19 @@ body {
     transform: translateY(-6px);
 }
 
-.project-image { overflow: hidden; height: 100%; min-height: 200px; }
-.project-img {
-    width: 100%; height: 100%;
+.project-image {
+    overflow: hidden;
+    height: 100%;
     min-height: 200px;
-    object-fit: cover; display: block;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
     transition: transform 0.4s ease;
 }
 
@@ -711,7 +719,8 @@ body {
     .resume-section { text-align: center; }
     .tag-line { margin: 0 auto 1.25rem; }
     .projects-container .project-item { grid-template-columns: 1fr; }
-    .project-image { min-height: 200px; }
+    .project-image { min-height: 220px; height: 220px; }
+    .project-img { height: 220px; min-height: 220px; object-fit: cover; object-position: center top; }
     .project-content { padding: 1.5rem; }
 }
 
